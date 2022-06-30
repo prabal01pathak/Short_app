@@ -1,28 +1,4 @@
 [tool.poetry]
-  rom http.server import SimpleHTTPRequestHandler, HTTPServer
-import socketserver
-
-PORT = 8000
-
-HANDLER = SimpleHTTPRequestHandler
-
-class Server(SimpleHTTPRequestHandler):
-    def __init__(self, c, b, d):
-        super(SimpleHTTPRequestHandler)
-
-    def do_GET(self):
-        self.send_response(200)
-
-def main():
-    # with socketserver.TCPServer(('', PORT), HANDLER) as httpd:
-    #     print(f"serving at {PORT}")
-    #     httpd.serve_forever()
-    httpd = HTTPServer(("", PORT), Server)
-    httpd.serve_forever()
-
-
-if __name__ == "__main__":
-    main()
 name = "short_app"
 version = "0.1.0"
 description = ""
@@ -30,6 +6,9 @@ authors = ["Prabal Pathak <prabal01pathak@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+fastapi = "^0.78.0"
+uvicorn = {extras = ["standard"], version = "^0.18.2"}
+SQLAlchemy = "^1.4.39"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1"
