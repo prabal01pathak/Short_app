@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""
+Description: Application settings like app name, database settings, installed apps
+Author: Prabal Pathak
+"""
 
 import os
 from collections import namedtuple

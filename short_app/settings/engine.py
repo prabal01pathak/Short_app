@@ -1,6 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+"""
+Description: Sql engine settings like session and base class
+Author: Prabal Pathak
+"""
+
 from functools import wraps
 
 from sqlalchemy import create_engine
@@ -11,6 +16,8 @@ BASE = declarative_base()
 ENGINE = {}
 
 def memoize(func):
+    """Store the session
+    """
     @wraps(func)
     def wrapper(*args, **kwargs):
         engine = func(*args, **kwargs)
@@ -21,6 +28,8 @@ def memoize(func):
 
 @memoize
 def create_connection(url: str) -> create_engine:
+    """Create engine for sql and reurn it
+    """
     if url.startswith("sqlite"):
         engine = create_engine(url, connect_args={"check_same_thread": False})
     else:
@@ -29,6 +38,8 @@ def create_connection(url: str) -> create_engine:
 
 
 def make_session(url: str) -> sessionmaker:
+    """Create local session for database access
+    """
     engine = create_connection(url)
     local_session = sessionmaker(autocommit=True, autflush=True, bind=engine)
     return local_session
