@@ -82,6 +82,14 @@ def create_files(path: Path) -> list:
     return files
 
 
+def clear_app(app_name: str):
+    path = Path(f"./{app_name}")
+    if path.exists():
+        path.rmdir()
+    else:
+        raise ValueError("Directory dosen't exist")
+
+
 
 if __name__ == "__main__":
     f = create_folder("Hello")
