@@ -6,7 +6,6 @@ Discription: get the arguments from the terminal when running
 Author: Prabal Pathak
 """
 
-from typing import Optional
 import typer
 import uvicorn
 
@@ -18,13 +17,12 @@ PORT = 8000
 HOST = "127.0.0.1"
 
 
-
 @cmd_app.command()
 def runserver(host: str = HOST, port: int = PORT):
     """
     Run the uvicorn server
     """
-    uvicorn.run(app, host=host, port= port)
+    uvicorn.run(app, host=host, port=port)
 
 
 @cmd_app.command()
@@ -33,6 +31,7 @@ def makemigrations():
     Make migrations
     """
     typer.echo(" making the migrations", color="green")
+
 
 @cmd_app.command()
 def migrate():
@@ -44,10 +43,10 @@ def migrate():
 
 @cmd_app.command()
 def startapp(name: str = typer.Argument(...)):
-    """ create the add with all modules """
+    """create the add with all modules"""
     create_folder(name)
     print("Done createing the folders and files")
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     cmd_app()

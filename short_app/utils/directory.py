@@ -19,27 +19,28 @@ colors = {
     "blue": typer.colors.BLUE,
     "red": typer.colors.RED,
     "magenta": typer.colors.MAGENTA,
-    "white": typer.colors.WHITE
+    "white": typer.colors.WHITE,
 }
 
-def print(message:str , color: str="magenta", bold: bool=False) -> None:
+
+def print(message: str, color: str = "magenta", bold: bool = False) -> None:
     """
     Args:
         message(str): Message to print
         color(str): colors key
         bold(bool): font should be bold or not
-    Return: 
+    Return:
         None
     """
     message = typer.style(message, fg=colors[color], bold=bold)
     typer.echo(message)
-    
 
 
 def create(func):
     """decorator to create app
-       use the app path and create files
+    use the app path and create files
     """
+
     @wraps(func)
     def wrapper(*args, **kwargs):
         print("Createing the application")
@@ -48,13 +49,14 @@ def create(func):
         files = create_files(path)
         print("Done", bold=True)
         return files
+
     return wrapper
 
 
 @create
 def create_folder(app_name: str) -> bool:
     """
-    Create the folder for application and 
+    Create the folder for application and
     create all the boilerplate required to start the project
     Args:
         app_name(str): Folder name to create
@@ -107,7 +109,6 @@ def clear_app(app_name: str):
         shutil.rmtree(f"./{app_name}")
     else:
         raise ValueError("Directory dosen't exist")
-
 
 
 if __name__ == "__main__":
