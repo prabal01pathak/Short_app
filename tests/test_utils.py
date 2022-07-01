@@ -3,8 +3,8 @@
 
 from typer.testing import CliRunner
 
-from utils.argpars import cmd_app
-from utils.directory import clear_app
+from short_app.utils.argpars import cmd_app
+from short_app.utils.directory import clear_app
 
 runner = CliRunner()
 
