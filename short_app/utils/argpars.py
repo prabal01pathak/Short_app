@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-Discription: get the arguments from the terminal when running 
+Discription: get the arguments from the terminal when running
     manage.py
 Author: Prabal Pathak
 """
