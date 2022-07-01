@@ -22,7 +22,15 @@ colors = {
     "white": typer.colors.WHITE
 }
 
-def print(message:str , color: str="magenta", bold: bool=False):
+def print(message:str , color: str="magenta", bold: bool=False) -> None:
+    """
+    Args:
+        message(str): Message to print
+        color(str): colors key
+        bold(bool): font should be bold or not
+    Return: 
+        None
+    """
     message = typer.style(message, fg=colors[color], bold=bold)
     typer.echo(message)
     
@@ -86,6 +94,12 @@ def create_files(path: Path) -> list:
 
 
 def clear_app(app_name: str):
+    """Delete the testing application
+    Args:
+        app_name(str): created testing app name
+    Return:
+        None
+    """
     app_path = Path(f"./{APP_NAME}")
     os.chdir(app_path)
     path = Path(f"./{app_name}")

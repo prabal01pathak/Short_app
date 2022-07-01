@@ -44,6 +44,7 @@ def migrate():
 
 @cmd_app.command()
 def startapp(name: str = typer.Argument(...)):
+    """ create the add with all modules """
     create_folder(name)
     print("Done createing the folders and files")
 
