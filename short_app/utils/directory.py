@@ -88,6 +88,7 @@ def create_files(path: Path) -> list:
 def clear_app(app_name: str):
     app_path = Path(f"./{APP_NAME}")
     os.chdir(app_path)
+    path = Path(f"./{app_name}")
     if path.exists():
         shutil.rmtree(f"./{app_name}")
     else:
