@@ -5,9 +5,10 @@ Discription: To create the folder and files from the app argparse
 Author: Prabal Pathak
 """
 
+from functools import wraps
 from pathlib import Path
 import os
-from functools import wraps
+import shutil
 
 import typer
 
@@ -85,7 +86,7 @@ def create_files(path: Path) -> list:
 def clear_app(app_name: str):
     path = Path(f"./{app_name}")
     if path.exists():
-        path.rmdir()
+        shutil.rmtree(path)
     else:
         raise ValueError("Directory dosen't exist")
 
