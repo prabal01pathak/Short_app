@@ -12,6 +12,8 @@ import shutil
 
 import typer
 
+from ..settings.settings import APP_NAME
+
 colors = {
     "green": typer.colors.GREEN,
     "blue": typer.colors.BLUE,
@@ -51,7 +53,7 @@ def create_folder(app_name: str) -> bool:
     Return:
         acknwoledgment(bool)
     """
-    path = Path(f"./{app_name}")
+    path = Path(f"./{APP_NAME}/{app_name}")
     if path.exists():
         raise ValueError(f"Application already exists {path}")
     if not path.exists():
@@ -84,9 +86,10 @@ def create_files(path: Path) -> list:
 
 
 def clear_app(app_name: str):
-    path = Path(f"./{app_name}")
+    app_path = Path(f"./{APP_NAME}")
+    os.chdir(app_path)
     if path.exists():
-        shutil.rmtree(path)
+        shutil.rmtree(f"./{app_name}")
     else:
         raise ValueError("Directory dosen't exist")
 

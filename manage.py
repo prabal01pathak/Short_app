@@ -7,8 +7,8 @@ Author: Prabal Pathak
 
 import uvicorn
 
-from utils.argpars import cmd_app
-from utils.directory import create_folder
+from short_app.utils.argpars import cmd_app
+from short_app.utils.directory import create_folder
 
 
 if __name__ == "__main__":

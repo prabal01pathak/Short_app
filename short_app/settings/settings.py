@@ -3,8 +3,10 @@
 
 import os
 from collections import namedtuple
+from .utils import get_env
 
 
+APP_NAME = "short_app"
 SECRET_KEY = os.getenv("SECRET_KEY", None)
 INSTALLED_APPS = [
     "short_app",

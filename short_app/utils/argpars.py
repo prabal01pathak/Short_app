@@ -10,8 +10,8 @@ from typing import Optional
 import typer
 import uvicorn
 
-from short_app.app import app
 from .directory import create_folder, print
+from ..app import app
 
 cmd_app = typer.Typer()
 PORT = 8000
