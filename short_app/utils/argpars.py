@@ -9,7 +9,7 @@ Author: Prabal Pathak
 import typer
 import uvicorn
 
-from .directory import create_folder, print
+from .directory import create_folder, print_message
 from ..app import app
 
 cmd_app = typer.Typer()
@@ -45,7 +45,7 @@ def migrate():
 def startapp(name: str = typer.Argument(...)):
     """create the add with all modules"""
     create_folder(name)
-    print("Done createing the folders and files")
+    print_message("Done createing the folders and files")
 
 
 if __name__ == "__main__":

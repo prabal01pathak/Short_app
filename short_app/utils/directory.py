@@ -23,7 +23,7 @@ colors = {
 }
 
 
-def print(message: str, color: str = "magenta", bold: bool = False) -> None:
+def print_message(message: str, color: str = "magenta", bold: bool = False) -> None:
     """
     Args:
         message(str): Message to print
@@ -43,11 +43,11 @@ def create(func):
 
     @wraps(func)
     def wrapper(*args, **kwargs):
-        print("Createing the application")
+        print_message("Createing the application")
         path = func(*args, **kwargs)
-        print("Done creating folder")
+        print_message("Done creating folder")
         files = create_files(path)
-        print("Done", bold=True)
+        print_message("Done", bold=True)
         return files
 
     return wrapper
@@ -113,4 +113,4 @@ def clear_app(app_name: str):
 
 if __name__ == "__main__":
     f = create_folder("Hello")
-    print(f)
+    print_message(f)
