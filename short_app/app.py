@@ -23,6 +23,6 @@ app.include_router(router)
 
 
 @app.get("/")
-async def root(request: Request):
+async def root():
     """root route"""
-    return {"message": "Hello World!", "root_path": request.scope.get("root_path")}
+    return {"message": "Hello World!"}
