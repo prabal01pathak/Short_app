@@ -6,11 +6,10 @@ Discription: get the arguments from the terminal when running
 Author: Prabal Pathak
 """
 
+import os
 import typer
-import uvicorn
 
 from .directory import create_folder, print_message
-from ..app import app
 
 cmd_app = typer.Typer()
 PORT = 8000
@@ -18,11 +17,17 @@ HOST = "127.0.0.1"
 
 
 @cmd_app.command()
-def runserver(host: str = HOST, port: int = PORT):
+def runserver(host: str = HOST, port: int = PORT, reload: bool = False):
     """
     Run the uvicorn server
     """
-    uvicorn.run(app, host=host, port=port)
+    # root_path = "/api/v1"
+    command = f"uvicorn short_app.app:app --host {host} --port {port}"
+
+    if not reload:
+        os.system(command)
+    else:
+        os.system(command + " --reload")
 
 
 @cmd_app.command()

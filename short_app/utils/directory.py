@@ -85,7 +85,7 @@ def create_files(path: Path) -> list:
     """
     # create models.py
     models = path / "models.py"
-    views = path / "views.py"
+    views = path / "routes.py"
     utils = path / "utils.py"
     init = path / "__init__.py"
     files = [models, views, utils, init]
