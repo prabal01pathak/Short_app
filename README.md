@@ -21,8 +21,12 @@ To run tests, run the following command
 
 ## Usage/Examples
 
+```sh
+python3 manage.py runserver
 ```
-uvicorn app:app
+or
+```bash
+python3 manage.py runserver --host ${HOST} --port ${PORT}
 ```
 
 
@@ -31,6 +35,7 @@ Practice Makes Perfect
 ## 🛠 Skills
 - Python3
 - FastAPI
+- Strawberry
 
 
 ## Tech Stack
@@ -80,8 +85,6 @@ Takes two numbers and returns the sum.
 
 ## Installation
 
-Install my-project with npm
-
 ```bash
   pip3 install poetry
   poetry shell
@@ -107,7 +110,12 @@ Go to the project directory
   cd short_video
 ```
 
-Install dependencies
+## Install dependencies
+
+### Install poetry (Optional)
+```bash
+pip3 install poetry
+```
 
 ```bash
   poetry install
@@ -116,7 +124,7 @@ Install dependencies
 Start the server
 
 ```bash
-  uvicorn run app:app
+  python3 manage.py runserver
 ```
 
 
