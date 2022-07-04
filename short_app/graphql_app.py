@@ -5,9 +5,9 @@ Author: Prabal Pathak
 
 from typing import Optional
 
-import strawberry
-from pydantic import BaseModel
 from fastapi import FastAPI, Depends
+from pydantic import BaseModel
+import strawberry
 from strawberry.fastapi import GraphQLRouter
 
 
