@@ -2,7 +2,7 @@
 Description: helper functions for video app
 Author: Prabal Pathak
 """
-import shuti
+import shutil
 from pathlib import Path
 from fastapi import UploadFile
 
@@ -30,4 +30,4 @@ async def get_video_list(cat: str):
     Return:
         video_dict(dict): available video dict
     """
-    return {"1": "hi.mp4"}
+    return {"1": "hi.mp4", "cat": cat}
