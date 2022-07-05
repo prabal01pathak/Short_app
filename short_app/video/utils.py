@@ -1,8 +1,8 @@
 """
-Description: utiltiez for video app
+Description: helper functions for video app
 Author: Prabal Pathak
 """
-import shutil
+import shuti
 from pathlib import Path
 from fastapi import UploadFile
 
@@ -21,3 +21,13 @@ def write_file(file: UploadFile) -> dict:
         shutil.copyfileobj(file.file, buffer)
 
     return {"message": "Uploaded succesfully", "file_name": file.filename}
+
+
+async def get_video_list(cat: str):
+    """ Return the available video list
+    Args:
+        cat(str): video category
+    Return:
+        video_dict(dict): available video dict
+    """
+    return {"1": "hi.mp4"}
