@@ -41,14 +41,14 @@ Practice Makes Perfect
 ## Tech Stack
 **Programming Language** - Python3
 
-**Framework** - FastAPI
+**Framework** - FastAPI, Strawberry
 
 ## API Reference
 
-#### Get all items
+#### Get all vides
 
 ```http
-  GET /api/items
+  GET /api/videos
 ```
 
 | Parameter | Type     | Description                |
@@ -70,14 +70,9 @@ Practice Makes Perfect
 Takes two numbers and returns the sum.
 
 
-## Documentation
-
-[Documentation](https://linktodocumentation)
-
-
 ## Features
 
-- Light/dark mode toggle
+- View video stream
 - Live previews
 - Fullscreen mode
 - Cross platform
