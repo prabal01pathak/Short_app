@@ -14,7 +14,8 @@ def main():
         from short_app.utils.argpars import cmd_app
         cmd_app()
     except ImportError as _e:
-        raise ImportError(f"Make sure you have {_e} installed if you are using virtual environment please activate it")
+        print("Please make sure you have \
+activated the virtual environmentError: ", _e)
 
 
 if __name__ == "__main__":
