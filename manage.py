@@ -6,8 +6,17 @@ Author: Prabal Pathak
 """
 
 
-from short_app.utils.argpars import cmd_app
+
+
+def main():
+    """command line utility"""
+    try:
+        from short_app.utils.argpars import cmd_app
+        cmd_app()
+    except ImportError as _e:
+        print("Please make sure you have \
+activated the virtual environmentError: ", _e)
 
 
 if __name__ == "__main__":
-    cmd_app()
+    main()
