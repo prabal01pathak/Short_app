@@ -44,5 +44,4 @@ async def view(_id: str):
     """
     home_path = Path("/home/prabal/Downloads/")
     video_path = home_path / "PRG7.avi"
-    print(_id)
     return FileResponse(video_path, media_type="video/mp4")
